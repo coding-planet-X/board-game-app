@@ -1,0 +1,169 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    button {
+      height: 52px;
+      margin-left: 5px;
+    }
+
+    .mat-form-field {
+        width: 50%;
+    }
+}
+.recomended-games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .slides{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  
+  .game-card {
+    width:300px;
+
+    font-size: .75em;
+    display: flex;
+    flex-direction: column;
+    margin:16px;
+    cursor: pointer;
+  
+    img {
+      width: 100%;
+      max-height: 100px;
+      margin: auto;
+    }
+  }
+  
+  .card-title-container {
+    display: flex;
+    align-items: center;
+  
+    .mat-card-title {
+      font-size: 1.0em;
+      line-height: normal;
+    }
+  }
+  
+  .mat-card-content {
+    font-size: .95em;
+    line-height: normal;
+  }
+  .mat-card-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  .selected-icon {
+    margin-right: 5px;
+  }
+  .recomended-card{
+      display: flex;
+      flex-direction: row;
+      width:1000px; 
+      height: 300px;
+      overflow: scroll;
+
+  }
+  .recomended-block{
+    
+    display: flex;
+    flex-direction: row;
+    width:1000px; 
+    height: 300px;
+    overflow-x: scroll;
+    background-color: #dadfea;
+}
+.next-prev{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.nexty-prevy{
+    font-size: 10px;
+    align-self: center;
+}.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    button {
+      height: 52px;
+      margin-left: 5px;
+    }
+
+    .mat-form-field {
+        width: 50%;
+    }
+}
+.recomended-games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .slides{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  
+  .game-card {
+    width:300px;
+
+    font-size: .75em;
+    display: flex;
+    flex-direction: column;
+    margin:16px;
+    cursor: pointer;
+  
+    img {
+      width: 100%;
+      max-height: 100px;
+      margin: auto;
+    }
+  }
+  
+  .card-title-container {
+    display: flex;
+    align-items: center;
+  
+    .mat-card-title {
+      font-size: 1.0em;
+      line-height: normal;
+    }
+  }
+  
+  .mat-card-content {
+    font-size: .95em;
+    line-height: normal;
+  }
+  .mat-card-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  .selected-icon {
+    margin-right: 5px;
+  }
+  .recomended-card{
+      display: flex;
+      flex-direction: row;
+      width:1000px; 
+      height: 300px;
+      overflow: scroll;
+
+  }
+  .recomended-block{
+    
+    display: flex;
+    flex-direction: row;
+    width:1000px; 
+    height: 300px;
+    overflow-x: scroll;
+    background-color: #dadfea;
+}
+    

@@ -1,0 +1,14 @@
+
+<mat-form-field appearance="fill" class="sele">
+  <mat-label>Select a Category</mat-label>
+  <mat-select [(ngModel)]="cat" name="food">
+    <mat-option *ngFor="let food of foods" [value]="food.id" (click)="selectCat(food.id)">
+      {{food.name}}
+      
+    </mat-option>
+    
+  </mat-select>
+  
+</mat-form-field>
+
+

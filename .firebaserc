@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "board-game-app-28aa6"
+  },
+  "targets": {
+    "board-game-app-28aa6": {
+      "hosting": {
+        "board-game-app": [
+          "board-game-app-28aa6"
+        ]
+      }
+    }
+  }
+}

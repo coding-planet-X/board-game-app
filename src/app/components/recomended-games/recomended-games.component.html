@@ -1,0 +1,84 @@
+    <div class="recomended-games">
+    <div class="popular">
+    <h2>popular games</h2>
+    <div class="recomended-block">
+    <mat-card class="game-card" *ngFor="let game of games" (click)="goToGameDetails(game)">
+        <div class="card-title-container">
+            <mat-icon *ngIf="ownedGames[game.id]" class="material-icons-outlined selected-icon">verified</mat-icon>
+            <mat-icon *ngIf="wishListGames[game.id]" class="selected-icon">switch_access_shortcut</mat-icon>
+            <mat-card-title>{{game?.name}}</mat-card-title>
+        </div>
+        <img mat-card-image [src]="game.images.medium">
+        <mat-card-content>
+            <div>{{(game.min_players || "unknown") + "-" + (game.max_players || "unknown") + " players" || "player amount unknown"}}</div>
+            <div>{{(game.min_age || "unknown") + "+" || "unknown age recomendation"}}</div>
+            <div>{{"est: $" + (game.msrp || "price unknown")|| "price unknown"}}</div>
+            
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-mini-fab color="primary" matTooltip="Add to list of owned games" (click)="updateOwnedList($event, game)">
+                <mat-icon class="material-icons-outlined">verified</mat-icon>
+            </button>
+            <button mat-mini-fab matTooltip="Add to wishlist" (click)="updateWishlist($event, game)">
+                <mat-icon>switch_access_shortcut</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+    </div>
+    <div class="testing-cate">
+        
+    
+<mat-form-field appearance="fill" class="sele">
+    <mat-label>Select a Category</mat-label>
+    <mat-select [(ngModel)]="cat" name="food" [(value)]="cat">
+      <mat-option *ngFor="let food of foods" [value]="food.id" (click)="selectedCat(food.id)">
+        {{food.name}}
+        
+      </mat-option>
+      
+    </mat-select>
+    
+  </mat-form-field>
+    <form class="recomended-block" #f="ngForm" (ngSubmit)="pageButton()">
+    <div *ngIf="!firstLoad;then prevBlock"></div>
+    <ng-template #prevBlock>
+        <mat-card class="game-card next-prev" >
+            <button mat-fab class="nexty-prevy" (click)="loadPrevPage()"><mat-icon>arrow_circle_left</mat-icon></button>
+            <div class="nexty-prevy">Prev Page</div>
+        </mat-card>
+    </ng-template>
+    <mat-card class="game-card" *ngFor="let game of ogames" (click)="goToGameDetails(game)">
+        <div class="card-title-container">
+            <mat-icon *ngIf="ownedGames[game.id]" class="material-icons-outlined selected-icon">verified</mat-icon>
+            <mat-icon *ngIf="wishListGames[game.id]" class="selected-icon">switch_access_shortcut</mat-icon>
+            <mat-card-title>{{game.name}}</mat-card-title>
+        </div>
+        <img mat-card-image [src]="game.images.medium">
+        <mat-card-content>
+            <div>{{(game.min_players || "unknown") + "-" + (game.max_players || "unknown") + " players" || "player amount unknown"}}</div>
+            <div>{{(game.min_age || "unknown") + "+" || "unknown age recomendation"}}</div>
+            <div>{{"est: $" + (game.msrp|| "price unknown")|| "price unknown"}}</div>
+            
+            
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-mini-fab color="primary" matTooltip="Add to list of owned games" (click)="updateOwnedList($event, game)">
+                <mat-icon class="material-icons-outlined">verified</mat-icon>
+            </button>
+            <button mat-mini-fab matTooltip="Add to wishlist" (click)="updateWishlist($event, game)">
+                <mat-icon>switch_access_shortcut</mat-icon>
+            </button>
+        </mat-card-actions>
+        
+    </mat-card>
+    <div *ngIf="fullLoad;then nextBlock"></div>
+    <ng-template #nextBlock>
+        <mat-card class="game-card next-prev" >
+            <button mat-fab class="nexty-prevy" (click)="loadNextPage()"><mat-icon>arrow_circle_right</mat-icon></button>
+            <div class="nexty-prevy">Next Page</div>
+        </mat-card>
+    </ng-template>
+</form>
+    </div>
+</div>

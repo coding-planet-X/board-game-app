@@ -1,0 +1,26 @@
+<div class="searched-games">
+    <mat-card class="test-card">
+    <mat-card class="game-card" *ngFor="let game of games" (click)="goToGameDetails(game)">
+        <div class="card-title-container">
+            <mat-icon *ngIf="ownedGames[game.id]" class="material-icons-outlined selected-icon">verified</mat-icon>
+            <mat-icon *ngIf="wishListGames[game.id]" class="selected-icon">switch_access_shortcut</mat-icon>
+            <mat-card-title class="titleFont">{{game?.name}}</mat-card-title>
+        </div>
+        <img mat-card-image [src]="game.images.medium">
+        <mat-card-content class="seaFont">
+            <div class="sss">{{(game.min_players || "unknown") + "-" + (game.max_players || "unknown") + " players" || "player amount unknown"}}</div>
+            <div>{{(game.min_age || "unknown") + "+" || "unknown age recomendation"}}</div>
+            <div>{{"est: $" + (game.msrp || "price unknown")|| "price unknown"}}</div>
+            
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-mini-fab color="primary" matTooltip="Add to list of owned games" (click)="updateOwnedList($event, game)">
+                <mat-icon class="material-icons-outlined">verified</mat-icon>
+            </button>
+            <button mat-mini-fab matTooltip="Add to wishlist" (click)="updateWishlist($event, game)">
+                <mat-icon>switch_access_shortcut</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    </mat-card>
+</div>
